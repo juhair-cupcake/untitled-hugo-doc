@@ -2,3 +2,19 @@ baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "UNTITLED-Hugo-Doc"
 theme = "utitled-hugo-doc"
+
+[menu]
+
+  [[menu.main]]
+    identifier = "about"
+    name = "about hugo"
+    pre = "<i class='fa fa-heart'></i>"
+    url = "/about/"
+    weight = -110
+
+  [[menu.main]]
+    name = "getting started"
+    post = "<span class='alert'>New!</span>"
+    pre = "<i class='fa fa-road'></i>"
+    url = "/getting-started/"
+    weight = -100
