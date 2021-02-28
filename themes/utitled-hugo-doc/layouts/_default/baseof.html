@@ -3,9 +3,8 @@
     {{- partial "head.html" . -}}
     <body>
         {{- partial "navigation.html" . -}}
-        <div id="content">
-        {{- block "main" . }}{{- end }}
-        </div>
+        
+        {{- block "main" . -}}{{- end -}}
         
         {{- partial "sidebar.html" . -}}
 

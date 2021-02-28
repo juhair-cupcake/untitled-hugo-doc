@@ -3,18 +3,10 @@ languageCode = "en-us"
 title = "UNTITLED-Hugo-Doc"
 theme = "utitled-hugo-doc"
 
-[menu]
+[params]
 
-  [[menu.main]]
-    identifier = "about"
-    name = "about hugo"
-    pre = "<i class='fa fa-heart'></i>"
-    url = "/about/"
-    weight = -110
-
-  [[menu.main]]
-    name = "getting started"
-    post = "<span class='alert'>New!</span>"
-    pre = "<i class='fa fa-road'></i>"
-    url = "/getting-started/"
-    weight = -100
+  # Hide content from sidebar
+  menu_exclusion = [
+    "blog",
+    "post",
+  ]

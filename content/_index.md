@@ -1,8 +1,9 @@
 ---
-title: home page
+title: UNTITLED-Hugo-Doc
+weight: 1
 ---
 
-# H1
+# Welcome to the Landing page.
 
 ## H2
 
