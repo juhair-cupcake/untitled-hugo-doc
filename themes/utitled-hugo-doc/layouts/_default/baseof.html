@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
-    {{- partial "head.html" . -}}
-    <body>
-        {{- partial "navigation.html" . -}}
+  {{- partial "head.html" . -}}
+  <body>
+      {{- partial "navigation.html" . -}}
         
-        {{- block "main" . -}}{{- end -}}
-        
-        {{- partial "sidebar.html" . -}}
-
-        {{- partial "footer.html" . -}}
-    </body>
+      <div class="main-wrapper">
+        <aside>
+          {{- partial "sidebar.html" . -}}
+        </aside>
+        <main>
+          {{- block "main" . -}}{{- end -}}
+        </main>
+      </div>
+    {{- partial "footer.html" . -}}
+  </body>
 </html>

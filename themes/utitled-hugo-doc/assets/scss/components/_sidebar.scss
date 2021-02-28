@@ -1,7 +1,47 @@
+@import "variables";
+
 .sidebar {
   ul {
+    padding: 0;
     li {
       list-style: none;
+    }
+  }
+  a {
+    display: block;
+    text-decoration: none;
+    padding: 0px 10px;
+    color: $primary;
+    background-color: rgb(238, 238, 238);
+    margin: 5px 0px;
+    &.active {
+      color: $secondary;
+    }
+  }
+  .sidebar-sub-menu {
+    .mark {
+      padding: 0px 6px;
+      margin-left: 5px;
+      border: solid 1px $primary;
+      border-radius: 50%;
+    }
+    &-child {
+      padding-left: 20px;
+    }
+    &.parent {
+      .sidebar-sub-menu-child {
+        display: block;
+      }
+    }
+    &.nope {
+      .mark {
+        padding: 0px 5px;
+        border: solid 1px $primary;
+        border-radius: 20%;
+      }
+      .sidebar-sub-menu-child {
+        display: none;
+      }
     }
   }
 }

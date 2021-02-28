@@ -1,11 +1,9 @@
 {{$currentNode := .}}
 <nav class="sidebar">
 <ul>
-  <li class="
-            {{ if .IsHome }}
-              active
-            {{ end }}">
-    <a href="{{ .Site.BaseURL }}"> Home </a>
+  <li class="{{ if .IsHome }}active{{ end }}">
+    <a class="{{ if .IsHome }}active{{ end }}"
+    href="{{ .Site.BaseURL }}"> Home </a>
   </li>
 
   {{- range .Site.Home.Sections.ByWeight -}}
@@ -28,16 +26,14 @@
         <li class="
                   {{ if .IsAncestor $currentNode }}
                     parent
-                  {{ end }}
-                  {{ if and .File $currentNode.File }}
-                    {{ if eq .File.UniqueID $currentNode.File.UniqueID }}
-                      active
-                    {{ end }}
+                  {{ else}}
+                    nope
                   {{ end }}
                   {{ if ne $numberOfPages 0 }}
                     sidebar-sub-menu
                   {{ end }}">
-          <a href="{{ .Permalink }}">
+          <a class="{{ if and .File $currentNode.File }}{{ if eq .File.UniqueID $currentNode.File.UniqueID }}active{{ end }}{{ end }}"
+              href="{{ .Permalink }}">
             {{ safeHTML .Params.Pre }}
             {{ .Title }}
             {{ safeHTML .Params.Post }}
@@ -72,13 +68,9 @@
       {{- end -}}
       {{- else -}}
       
-      <li class="
-                {{ if and .File $currentNode.File }}
-                  {{ if eq .File.UniqueID $currentNode.File.UniqueID }}
-                    active
-                  {{ end }}
-                {{ end }}">
-        <a href="{{ .Permalink }}">
+      <li class="sidebar-unique">
+        <a class="{{ if and .File $currentNode.File }}{{ if eq .File.UniqueID $currentNode.File.UniqueID }}active{{ end }}{{ end }}"
+          href="{{ .Permalink }}">
           {{ safeHTML .Params.Pre }}
           {{ .Title }}
           {{ safeHTML .Params.Post }}
