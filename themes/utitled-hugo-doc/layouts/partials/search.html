@@ -1,0 +1,63 @@
+<form autocomplete="off" onsubmit="return false">
+    <input class="search-input"
+          id="searchInput"
+          type="text"
+          placeholder="Search By Name">
+</form>
+
+<script>
+  const search = (inp, database) => {
+  let currentFocus;
+  
+  inp.addEventListener("input", function(e) {
+    let dom1, dom2;
+    // collect data and convert it to lowercase and remove every charecter but (a-z);
+    let val = this.value.toLowerCase().replace(/[^\w]/gi, '');
+      
+      closeAllLists();
+      if (!val) { return false;}
+      
+      dom1 = document.createElement("UL");
+      dom1.setAttribute("class", "search-items");
+      
+      this.parentNode.appendChild(dom1);
+      
+      for (let i = 0; i < database.length; i++) {
+        let data = database[i];
+        if (data.searchTag.search(val) != -1 ) {
+          
+          dom2 = document.createElement("LI");
+          dom2.innerHTML = '<a href="'+ data.link + '">' + data.title + "</a>";
+          
+          dom1.appendChild(dom2);
+        }
+      }
+  });
+}
+
+const closeAllLists = (elmnt) => {
+    var x = document.getElementsByClassName("search-items");
+    for (var i = 0; i < x.length; i++) {
+      x[i].parentNode.removeChild(x[i]);
+  }
+}
+
+//by clicking anywhere list will be closed
+document.addEventListener("click", (e) => {
+  closeAllLists(e.target);
+});
+
+//Collect content data from hugo
+let data = [
+  {{ range $.Site.RegularPages }}
+    {  
+      title: {{ .Title }},
+      searchTag: {{ .Title }}.toLowerCase().replace(/[^\w]/gi, ''),
+      link: {{ .Permalink }},
+    },
+  {{ end }}
+];
+
+//implement the code
+search(document.getElementById("searchInput"), data);
+</script>

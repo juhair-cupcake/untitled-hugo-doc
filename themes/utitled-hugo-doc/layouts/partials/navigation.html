@@ -1,3 +1,10 @@
 <nav class="navbar">
-  <div class="logo">UNTITLED-Hugo-Doc</div>
+  <div class="logo">
+    <a href="{{ .Site.BaseURL }}">
+      UNTITLED-Hugo-Doc
+    </a>
+  </div>
+  <div class="search">
+    {{- partial "search.html" . -}}
+  </div>
 </nav>
