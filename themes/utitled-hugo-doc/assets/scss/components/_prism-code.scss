@@ -1,0 +1,12 @@
+.prism {
+  position: relative;
+  &-btn {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+  }
+  &-code {
+    overflow: scroll;
+    max-height: 300px;
+  }
+}

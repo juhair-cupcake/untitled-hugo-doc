@@ -1,0 +1,10 @@
+<div class="prism">
+  
+  <pre class="prism-code" 
+      style=" padding-top: 0px; font-size: large;">
+    <code class="language-{{ .Get "lang" }}">
+      {{ .Inner }}
+    </code>
+    <button class="prism-btn" data-clipboard-text="{{ .Inner }}">Copy</button>
+  </pre>
+</div>

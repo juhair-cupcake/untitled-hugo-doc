@@ -4,7 +4,11 @@
   </div>
 </footer>
 
-{{- /* Main JS */ -}}
+{{- /* JS */ -}}
+{{ $script := resources.Get "js/plugin/prism.js" | minify }}
+<script src="{{ $script.Permalink }}"></script>
+{{ $script := resources.Get "js/plugin/clipboard.min.js" | minify }}
+<script src="{{ $script.Permalink }}"></script>
 {{ $script := resources.Get "js/script.js" | minify }}
 <script src="{{ $script.Permalink }}"></script>
 
