@@ -2,4 +2,4 @@
 
 Hugo Documentation Page
 
-_dont Use default pretter_
+_this is a simple theme..._
