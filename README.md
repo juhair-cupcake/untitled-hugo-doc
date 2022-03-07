@@ -4,4 +4,4 @@ This is an unpublished Hugo Documentation theme. Due to some random reasons this
 
 # Link
 
-https://testing.juhair.dev/
+https://testing-monkey-001.juhair.dev/
