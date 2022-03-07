@@ -1,7 +1,7 @@
 # untitled-hugo-doc
 
-Hugo Documentation theme
+This is an unpublished Hugo Documentation theme. Due to some random reasons this project is not properly designed, but the main hugo structure is well prepared.
 
-Not Published yet!
+# Link
 
-_this is a simple theme..._
+https://testing.juhair.dev/
